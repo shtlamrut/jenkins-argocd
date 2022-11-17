@@ -18,11 +18,11 @@ pipeline {
 						   sh "git config user.email sandeshtamboli123@gmail.com"
 						   sh "git config user.name sandesh"
 						   sh "cat demo/deployment.yaml"
-						   sh "sed -i 's+mynamesandesh/jenkins-argocd.*+mynamesandesh/jenkins-argocd:${env.BUILD_NUMBER}+g' demo/deployment.yaml"
+						   sh "sed -i 's+mynamesandesh/jenkins.*+mynamesandesh/jenkins:${env.BUILD_NUMBER}+g' demo/deployment.yaml"
 						   sh "cat demo/deployment.yaml"
 						   sh "git add demo/deployment.yaml"
 						   sh "git commit -m 'Done by jenkins job changemanifest: ${env.BUILD_NUMBER}'"
-						   sh "git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/${GIT_USERNAME}/jenkins-argocd.git HEAD:main"
+						   sh "git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/${GIT_USERNAME}/jenkins.git HEAD:main"
 					   }	
 					}   
                }
