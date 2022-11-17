@@ -15,7 +15,7 @@ spec:
         - name: dockersock
           mountPath: /var/run/docker.sock
     - name: git
-      image: git:2.25.1
+      image: git
       command:    
         - cat
       tty: true
