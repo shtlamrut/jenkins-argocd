@@ -11,6 +11,7 @@ pipeline {
 
      stages {     
          stage('UPDATE GIT') {
+		   steps {	 
 		    container ('docker') {
                script {
 				   catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
@@ -27,6 +28,7 @@ pipeline {
 					}   
                }
 			}
+		   }	
 		}	
      }
 }	 
