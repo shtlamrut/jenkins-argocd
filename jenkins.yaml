@@ -13,13 +13,7 @@ spec:
       privileged: true
       volumeMounts:
         - name: dockersock
-          mountPath: /var/run/docker.sock
-    - name: git
-      image: git
-      command:    
-        - cat
-      tty: true
-      privileged: true    
+          mountPath: /var/run/docker.sock    
   volumes:
     - name: dockersock
       hostPath:
