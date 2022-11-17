@@ -12,7 +12,7 @@ pipeline {
      stages {     
          stage('UPDATE GIT') {
 		   steps {	 
-		    container ('git') {
+		    container ('docker') {
                script {
 				   catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
 					   withCredentials([usernamePassword(credentialsId: 'sandesh-github-pat', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
