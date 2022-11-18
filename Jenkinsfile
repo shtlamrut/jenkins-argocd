@@ -22,7 +22,7 @@ pipeline {
 						   sh "cat demo/deployment.yaml"
 						   sh "git add demo/deployment.yaml"
 						   sh "git commit -m 'Done by jenkins job changemanifest: ${env.BUILD_NUMBER}'"
-						   sh "git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/${GIT_USERNAME}/jenkins.git HEAD:main"
+						   sh "git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/${GIT_USERNAME}/jenkins-argocd.git HEAD:main"
 					   }	
 					}   
                }
