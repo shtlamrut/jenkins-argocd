@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
         - name: hello
-          image: docker.io/mynamesandesh/jenkins-argocd:10
+          image: docker.io/mynamesandesh/jenkins:13
           imagePullPolicy: Always
           ports:
           - containerPort: 5000
