@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
         - name: hello
-          image: docker.io/mynamesandesh/jenkins:2
+          image: docker.io/mynamesandesh/jenkins:8
           imagePullPolicy: Always
           ports:
           - containerPort: 5000
