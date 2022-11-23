@@ -14,11 +14,11 @@ pipeline {
 		    steps {	 
                script {
 				   catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
-					   withCredentials([usernamePassword(credentialsId: 'sandesh-github-pat', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
-						   sh "git config user.email sandeshtamboli123@gmail.com"
-						   sh "git config user.name sandesh"
+					   withCredentials([usernamePassword(credentialsId: 'github', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
+						   sh "git config user.email shtlamrut@gmail.com"
+						   sh "git config user.name shtlamrut"
 						   sh "cat demo/deployment.yaml"
-						   sh "sed -i 's+mynamesandesh/jenkins.*+mynamesandesh/jenkins:${DOCKERTAG}+g' demo/deployment.yaml"
+						   sh "sed -i 's+shtlamrut/jenkins.*+shtlamrut/jenkins:${DOCKERTAG}+g' demo/deployment.yaml"
 						   sh "cat demo/deployment.yaml"
 						   sh "git add demo/deployment.yaml"
 						   sh "git commit -m 'Done by jenkins job changemanifest: ${env.BUILD_NUMBER}'"
