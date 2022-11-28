@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
         - name: hello
-          image: docker.io/shtlamrut/jenkins:11
+          image: docker.io/shtlamrut/jenkins:12
           imagePullPolicy: Always
           ports:
           - containerPort: 5000
